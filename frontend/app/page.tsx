@@ -2,12 +2,46 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
+// Helper to generate random style for floating logos
+function getRandomLogoStyle(side: "left" | "right") {
+  const size = Math.floor(Math.random() * 80) + 40; // 40-120px
+  const top = Math.floor(Math.random() * 80) + 10; // 10-90vh
+  const rotate = Math.floor(Math.random() * 60) - 30; // -30 to +30 deg
+  const style: React.CSSProperties = {
+    position: "absolute",
+    top: `${top}vh`,
+    [side]: `-${size / 2}px`,
+    width: `${size}px`,
+    height: `${size}px`,
+    opacity: 0.08,
+    transform: `rotate(${rotate}deg)`
+  };
+  return style;
+}
+
 export default function Home() {
   const router = useRouter();
+  // Generate 4 floating logos per side
+  const leftLogos = Array.from({ length: 4 }, (_, i) => (
+    <div key={"left-" + i} style={getRandomLogoStyle("left")}
+      className="hidden lg:block pointer-events-none select-none z-0">
+      <Image src="/logo4.png" alt="Decorative Logo" width={100} height={100} style={{ width: "100%", height: "auto" }} />
+    </div>
+  ));
+  const rightLogos = Array.from({ length: 4 }, (_, i) => (
+    <div key={"right-" + i} style={getRandomLogoStyle("right")}
+      className="hidden lg:block pointer-events-none select-none z-0">
+      <Image src="/logo4.png" alt="Decorative Logo" width={100} height={100} style={{ width: "100%", height: "auto" }} />
+    </div>
+  ));
+
   return (
-    <div className="w-full max-w-5xl mx-auto px-4 py-12">
+    <div className="relative w-full max-w-5xl mx-auto px-4 py-12">
+      {/* Floating decorative logos */}
+      {leftLogos}
+      {rightLogos}
       {/* Hero Section */}
-      <section className="flex flex-col md:flex-row items-center gap-10 mb-16">
+      <section className="flex flex-col md:flex-row items-center gap-10 mb-16 relative z-10">
         <div className="flex-1 flex flex-col items-start">
           <h1 className="text-5xl font-bold mb-4">
             <span className="text-white">AI-Powered</span> <span className="text-blue-600">Chiller Optimization</span>
