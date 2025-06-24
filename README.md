@@ -1,19 +1,83 @@
-# SmartChill-TEAM-HULL-
-"SmartChill: AI-Driven Optimization of Chiller Plant Load"
+# SmartChill: AI-Powered Chiller Optimization
 
-Description:
+"SmartChill" is a web application that leverages a machine learning model to predict and optimize chiller plant load and efficiency. The project uses a modern web stack with a Next.js frontend and a FastAPI backend.
 
-In an era where energy efficiency and sustainability are paramount, SmartChill leverages advanced machine learning techniques to optimize the load management of chiller plants. This project aims to develop a predictive model that analyzes historical performance data, environmental conditions, and operational parameters to forecast demand and optimize energy consumption.
+## Project Structure
 
-By implementing algorithms such as regression analysis, time series forecasting, and reinforcement learning, SmartChill will enable chiller plants to adjust operations in real-time, significantly reducing energy costs and minimizing environmental impact. The solution will also provide actionable insights for maintenance scheduling, further enhancing operational efficiency.
+-   `/frontend`: Contains the Next.js (React) user interface.
+-   `/main.py`: The FastAPI backend server that serves the prediction model.
+-   `/model.pkl`: The pre-trained machine learning model for predictions.
 
-Join us in transforming chiller plant management with intelligent, data-driven solutions that promote sustainability and operational excellence!
+## Technology Stack
 
+-   **Frontend**: [Next.js](https://nextjs.org/) (React Framework) with [Tailwind CSS](https://tailwindcss.com/)
+-   **Backend**: [FastAPI](https://fastapi.tiangolo.com/) (Python Web Framework)
+-   **Machine Learning**: [Scikit-learn](https://scikit-learn.org/)
 
-TO RUN THE CODE:
-install streamlit
-install scikitlearn
-move all the files to same directory
+## Setup and Installation
 
-use the below command in terminal:
-                                  streamlit run webapp6.py
+### Prerequisites
+
+-   [Node.js](https://nodejs.org/) (v18 or later)
+-   [Python](https://www.python.org/) (v3.8 or later)
+-   `pip` and `venv`
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/SubothSundar/SmartChill-TEAM-HULL-.git
+cd SmartChill-TEAM-HULL-
+```
+
+### 2. Setup the Backend
+
+Create and activate a Python virtual environment, then install the required packages.
+
+```bash
+# Create a virtual environment
+python -m venv venv
+
+# Activate the virtual environment
+# On Windows
+venv\\Scripts\\activate
+# On macOS/Linux
+source venv/bin/activate
+
+# Install Python packages
+pip install -r requirements.txt
+```
+
+*(Note: If a `requirements.txt` does not exist, you can install packages manually: `pip install fastapi uvicorn scikit-learn numpy`)*
+
+### 3. Setup the Frontend
+
+Navigate to the `frontend` directory and install the Node.js dependencies.
+
+```bash
+cd frontend
+npm install
+```
+
+## Running the Application
+
+You need to run the backend and frontend servers in separate terminals.
+
+### 1. Run the Backend Server
+
+From the project's root directory:
+
+```bash
+uvicorn main:app --reload
+```
+
+The backend API will be available at `http://127.0.0.1:8000`.
+
+### 2. Run the Frontend Server
+
+From the `frontend` directory:
+
+```bash
+npm run dev
+```
+
+The website will be available at `http://localhost:3000`.
