@@ -2,6 +2,9 @@
 
 "SmartChill" is a web application that leverages a machine learning model to predict and optimize chiller plant load and efficiency. The project uses a modern web stack with a Next.js frontend and a FastAPI backend.
 
+[![Demo Video](https://img.shields.io/badge/Demo%20Video-Click%20to%20Watch-blue?logo=google-drive)](https://drive.google.com/drive/folders/1rPXZHSeWmwcu6bmM6GAZNPLdWLO8iuof?usp=sharing)
+
+
 ## Project Structure
 
 -   `/frontend`: Contains the Next.js (React) user interface.
