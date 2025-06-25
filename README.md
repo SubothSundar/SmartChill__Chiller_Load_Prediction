@@ -8,6 +8,9 @@
 -   `/main.py`: The FastAPI backend server that serves the prediction model.
 -   `/model.pkl`: The pre-trained machine learning model for predictions.
 
+> **Note:**
+> Due to GitHub's file size limits, the `model.pkl` file is not included directly in this repository. Instead, you will find a `model.zip` file in the project root. **Before running the backend, unzip `model.zip` and place the extracted `model.pkl` file in the project root directory.**
+
 ## Technology Stack
 
 -   **Frontend**: [Next.js](https://nextjs.org/) (React Framework) with [Tailwind CSS](https://tailwindcss.com/)
@@ -39,7 +42,7 @@ python -m venv venv
 
 # Activate the virtual environment
 # On Windows
-venv\\Scripts\\activate
+venv\Scripts\activate
 # On macOS/Linux
 source venv/bin/activate
 
